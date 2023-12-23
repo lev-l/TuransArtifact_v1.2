@@ -8,6 +8,7 @@ public class UnityMovement : MonoBehaviour
     public float Speed;
     public float JumpForce;
     public bool grounded { get; private set; }
+    private bool _wantsToJump = false;
     private Rigidbody2D _rigidbody;
     private GhostMovement _ghost;
     private float _xSpeed;
@@ -26,6 +27,7 @@ public class UnityMovement : MonoBehaviour
         _filter.useTriggers = false;
         _filter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         _filter.useLayerMask = true;
+        OnUnground += SetGroundedFalse;
 
         StartCoroutine(GetGround());
     }
@@ -35,11 +37,15 @@ public class UnityMovement : MonoBehaviour
         Vector2 newVelocity = _rigidbody.velocity;
 
         newVelocity.x = Input.GetAxis("Horizontal") * Speed + _xSpeed;
-        if (grounded
-            && Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            newVelocity.y = Input.GetAxis("Jump") * JumpForce;
-            OnUnground?.Invoke(); // only works after you jump, think if you need to move it anywhere
+            _wantsToJump = true;
+            StartCoroutine(nameof(ResetJumpDelay));
+        }
+        if (_wantsToJump && grounded)
+        {
+            newVelocity.y = Jump();
         }
 
         _rigidbody.velocity = newVelocity;
@@ -53,7 +59,15 @@ public class UnityMovement : MonoBehaviour
             int grounds = Physics2D.Raycast(_rigidbody.position, Vector2.down, _filter, buffer, 0.7f);
 
             bool before = grounded;
-            grounded = grounds > 0;
+            if(grounds > 0)
+            {
+                grounded = true;
+            }
+            else if (before == true)
+            {
+                StartCoroutine(nameof(SetGroundedFalseDelay));
+            }
+
             if (!before  && grounded
                 && !_ghost.enabled)
             {
@@ -65,11 +79,37 @@ public class UnityMovement : MonoBehaviour
         }
     }
 
+    public IEnumerator SetGroundedFalseDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        grounded = false;
+    }
+
+    private void SetGroundedFalse()
+    {
+        grounded = false;
+    }
+
     public void AddForce(Vector2 force)
     {
         _rigidbody.velocity = force;
         _xSpeed = force.x;
         Invoke(nameof(SetXSpeed0), 0.2f);
+    }
+
+    private IEnumerator ResetJumpDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _wantsToJump = false;
+    }
+
+    private float Jump()
+    {
+        float newY = Input.GetAxis("Jump") * JumpForce;
+        _wantsToJump = false;
+        OnUnground?.Invoke();
+
+        return newY;
     }
 
     public void SetXSpeed0()
