@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cf1458de314584882ca6fec5b0c7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsTransition: 1
   LoadLevel: 
   LoadPosition: {x: 0, y: 0}
   PositionContainer: {fileID: 6179376890285013068}
