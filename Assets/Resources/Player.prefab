@@ -587,10 +587,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jump: {fileID: 8300000, guid: 903fdcd1a5783b8468bdd25f590e321e, type: 3}
-  Death: {fileID: 8300000, guid: 11edb3a55f3bdb64584953f9f3c96258, type: 3}
+  Death: {fileID: 8300000, guid: bffa000dccf1130448fa7cd1703ddf11, type: 3}
   Rope: {fileID: 8300000, guid: 1c84bd3b3f3ea5b43b5612b5db52b03f, type: 3}
-  Ghost: {fileID: 8300000, guid: b4ba8ef1fe4b0da4f909ce85da67a348, type: 3}
-  Teleport: {fileID: 8300000, guid: b49f56b3fdb67ae4ea89601f4f87d503, type: 3}
+  Ghost: {fileID: 8300000, guid: 281091a14c68c3a41a593466b6ff1b67, type: 3}
+  Teleport: {fileID: 8300000, guid: ceb3a388ae22daf46b25b88f0fa25b2f, type: 3}
 --- !u!82 &5090601844710807399
 AudioSource:
   m_ObjectHideFlags: 0
