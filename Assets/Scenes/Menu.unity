@@ -197,7 +197,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_TargetDisplay: 0
@@ -1863,8 +1863,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -355.7, y: -505}
-  m_SizeDelta: {x: 338.73245, y: 31.81903}
+  m_AnchoredPosition: {x: 1353.9, y: -329.4}
+  m_SizeDelta: {x: 226.79834, y: 241.69812}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994674391
 MonoBehaviour:
@@ -1879,7 +1879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2309541, g: 0.2830189, b: 0.2569865, a: 1}
+  m_Color: {r: 0.19824673, g: 0.764151, b: 0.47707495, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1887,7 +1887,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
@@ -1898,7 +1898,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Music licensed under Creative Commons by Attribution 4.0
+  m_Text: "\tAuthors:\n\n\tProgramming:\n\t\tLeo Balashov\n\n\tGamedesign:\n\t\tLeo
+    Balashov\n\n\tArt:\n\t\tSzadi Art (from UnityAssetStore)\n\n\tBackground music
+    by\n playonloop.com & audionautix.com\n\n\tMusic licensed under\nCreative Commons
+    by Attribution 4.0"
 --- !u!222 &994674392
 CanvasRenderer:
   m_ObjectHideFlags: 0
