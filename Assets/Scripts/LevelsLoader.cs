@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class LevelsLoader : MonoBehaviour
 {
+    public bool IsTransition;
     public string LoadLevel;
     public Vector2 LoadPosition;
     public LoadingPosition PositionContainer;
@@ -14,6 +15,9 @@ public class LevelsLoader : MonoBehaviour
     {
         File.WriteAllText(PositionContainer.FileName + ".json",
                                 JsonUtility.ToJson(LoadPosition));
-        SceneManager.LoadScene(LoadLevel);
+        if (IsTransition)
+        {
+            SceneManager.LoadScene(LoadLevel);
+        }
     }
 }
