@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class UnityMovement : MonoBehaviour
@@ -11,6 +12,9 @@ public class UnityMovement : MonoBehaviour
     private GhostMovement _ghost;
     private float _xSpeed;
     private ContactFilter2D _filter;
+
+    public event Action OnGround;
+    public event Action OnUnground;
 
     void Start()
     {
@@ -35,6 +39,7 @@ public class UnityMovement : MonoBehaviour
             && Input.GetKeyDown(KeyCode.Space))
         {
             newVelocity.y = Input.GetAxis("Jump") * JumpForce;
+            OnUnground?.Invoke(); // only works after you jump, think if you need to move it anywhere
         }
 
         _rigidbody.velocity = newVelocity;
@@ -53,6 +58,7 @@ public class UnityMovement : MonoBehaviour
                 && !_ghost.enabled)
             {
                 AudioSystem.PlayJump();
+                OnGround?.Invoke();
             }
 
             yield return new WaitForSeconds(0.01f);
