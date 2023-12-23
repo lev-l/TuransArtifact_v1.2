@@ -10,7 +10,6 @@ public class UnityMovement : MonoBehaviour
     public bool grounded { get; private set; }
     private bool _wantsToJump = false;
     private Rigidbody2D _rigidbody;
-    private GhostMovement _ghost;
     private float _xSpeed;
     private ContactFilter2D _filter;
 
@@ -21,7 +20,6 @@ public class UnityMovement : MonoBehaviour
     {
         grounded = false;
         _rigidbody = GetComponent<Rigidbody2D>();
-        _ghost = GetComponent<GhostMovement>();
         AudioSystem = GetComponent<Audio>();
 
         _filter.useTriggers = false;
@@ -68,8 +66,7 @@ public class UnityMovement : MonoBehaviour
                 StartCoroutine(nameof(SetGroundedFalseDelay));
             }
 
-            if (!before  && grounded
-                && !_ghost.enabled)
+            if (!before  && grounded)
             {
                 AudioSystem.PlayJump();
                 OnGround?.Invoke();

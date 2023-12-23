@@ -15,4 +15,4 @@ MonoBehaviour:
   Fly: 0
   SpearJump: 0
   Teleportation: 0
-  PhysicsTeleportation: 0
+  PhysicsTeleportation: 1
