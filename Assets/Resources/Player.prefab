@@ -343,7 +343,6 @@ GameObject:
   - component: {fileID: 573780150948057538}
   - component: {fileID: 573780150948057541}
   - component: {fileID: 573780150948057540}
-  - component: {fileID: 573780150948057543}
   - component: {fileID: 576239326109627552}
   - component: {fileID: 5090601844710807399}
   - component: {fileID: 4790259610606361435}
@@ -506,8 +505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfAbles: {fileID: 11400000, guid: 3ee36f26c0a085643a57bfe4f85c8714, type: 2}
-  PhysicTeleporter: {fileID: 8596140060433807375, guid: 066b735533a958a4a9710461b7d3523f,
-    type: 3}
 --- !u!114 &573780150948057539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9844e3c776e50bc4c854ff6b09ca76a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSystem: {fileID: 0}
+  AudioSystem: {fileID: 576239326109627552}
   Speed: 5
   JumpForce: 9
 --- !u!114 &573780150948057538
@@ -549,6 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Distance: 3.1
   Force: {x: 20, y: 20}
+  PlayerAbilities: {fileID: 11400000, guid: 3ee36f26c0a085643a57bfe4f85c8714, type: 2}
 --- !u!114 &573780150948057540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,19 +559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2354d312cf0ebaf449719a85c8bfcfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &573780150948057543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573780150948057542}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88890d7b022bcb14883a94a54b14b6d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 2
 --- !u!114 &576239326109627552
 MonoBehaviour:
   m_ObjectHideFlags: 0
