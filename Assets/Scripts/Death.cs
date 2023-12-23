@@ -36,7 +36,7 @@ public class Death : MonoBehaviour
         Collider2D[] colliders = new Collider2D[4];
         if (PlayerAbles.SpearJump)
         {
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSecondsRealtime(0.24f);
         }
 
         int count = _collider.OverlapCollider(_filter, colliders);
