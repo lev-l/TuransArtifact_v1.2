@@ -66,7 +66,7 @@ public class UnityMovement : MonoBehaviour
                 StartCoroutine(nameof(SetGroundedFalseDelay));
             }
 
-            if (!before  && grounded)
+            if (!before && grounds > 0)
             {
                 AudioSystem.PlayJump();
                 OnGround?.Invoke();
