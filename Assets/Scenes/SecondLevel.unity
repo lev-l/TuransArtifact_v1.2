@@ -6101,7 +6101,7 @@ SpriteRenderer:
   m_Size: {x: 0.65625, y: 0.65625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &301604552
@@ -6182,7 +6182,7 @@ SpriteRenderer:
   m_Size: {x: 0.65625, y: 0.65625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &303211097
@@ -8387,7 +8387,7 @@ PrefabInstance:
     - target: {fileID: 1749707849829731582, guid: 41331d0b1fff3d44d9e625ce20d06846,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15.100006
+      value: 15.099976
       objectReference: {fileID: 0}
     - target: {fileID: 1749707849829731582, guid: 41331d0b1fff3d44d9e625ce20d06846,
         type: 3}
@@ -16160,7 +16160,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.24284318}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 1}
     oldSize: {x: 2, y: 1}
     newSize: {x: 2, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -16861,12 +16861,12 @@ PrefabInstance:
     - target: {fileID: 2070107012216141562, guid: 4052bfe1fa6784649afb405db5207bd3,
         type: 3}
       propertyPath: LoadPosition.x
-      value: -56.98
+      value: -37
       objectReference: {fileID: 0}
     - target: {fileID: 2070107012216141562, guid: 4052bfe1fa6784649afb405db5207bd3,
         type: 3}
       propertyPath: LoadPosition.y
-      value: 15.648
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2292865575389843860, guid: 4052bfe1fa6784649afb405db5207bd3,
         type: 3}
@@ -24040,7 +24040,7 @@ SpriteRenderer:
   m_Size: {x: 0.65625, y: 0.65625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1163762484
