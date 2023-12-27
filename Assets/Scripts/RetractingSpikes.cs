@@ -9,11 +9,13 @@ public class RetractingSpikes : MonoBehaviour
     [SerializeField] private float _timeOut; // time the spikes are out
     [SerializeField] private float _timeIn;
     private Transform _transform;
+    private Collider2D _collider;
     private Vector3 _initialPosition;
 
     private void Start()
     {
         _transform = GetComponent<Transform>();
+        _collider = GetComponent<Collider2D>();
         _initialPosition = _transform.position;
 
         StartCoroutine(nameof(Moving));
@@ -30,7 +32,7 @@ public class RetractingSpikes : MonoBehaviour
         {
             yield return new WaitForSeconds(_timeOut);
 
-
+            //Retracting
             currentTime = 0;
             while (currentTime < Retracting.keys[Retracting.length - 1].time)
             {
@@ -40,11 +42,12 @@ public class RetractingSpikes : MonoBehaviour
 
                 currentTime += Time.deltaTime;
             }
+            _collider.enabled = false;
 
 
             yield return new WaitForSeconds(_timeIn);
 
-
+            //Deploying
             currentTime = maxTime;
             while (currentTime > 0)
             {
@@ -54,6 +57,7 @@ public class RetractingSpikes : MonoBehaviour
 
                 currentTime -= Time.deltaTime;
             }
+            _collider.enabled = true;
         }
     }
 }
