@@ -56,22 +56,26 @@ public class Rope : MonoBehaviour
             for(int i = _hitsList.Count - 1; i >= 0; i--)
             {
                 RaycastHit2D hit = _hitsList[i];
+                LightCooldown lamp = hit.collider.GetComponent<LightCooldown>();
 
                 if (hit.distance <= Distance
-                    && hit.collider.CompareTag("Light"))
+                    && lamp)
                 {
-                    Vector2 distanceToHit = hit.collider.transform.position - _self.position;
-                    hit.collider.GetComponent<Animator>().Play("RopeAttached");
+                    if (lamp.Use())
+                    {
+                        Vector2 distanceToHit = hit.collider.transform.position - _self.position;
+                        lamp.GetComponent<Animator>().Play("RopeAttached");
 
-                    if (_teleporting)
-                    {
-                        _movement.transform.Translate(distanceToHit);
+                        if (_teleporting)
+                        {
+                            _movement.transform.Translate(distanceToHit);
+                        }
+                        else
+                        {
+                            _movement.AddForce(Force * distanceToMouse.normalized);
+                        }
+                        break;
                     }
-                    else
-                    {
-                        _movement.AddForce(Force * distanceToHit.normalized);
-                    }
-                    break;
                 }
             }
         }
