@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7250468933084288786}
   - component: {fileID: 3898569184971300828}
   - component: {fileID: 2614225965661726973}
+  - component: {fileID: 2400719951583162662}
   m_Layer: 0
   m_Name: light
   m_TagString: Light
@@ -128,3 +129,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2400719951583162662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861425700204876726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb4db3e2c463e54f86b13c92c0661cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cooldown: 0.4
