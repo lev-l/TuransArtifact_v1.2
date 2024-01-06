@@ -61,10 +61,10 @@ public class Rope : MonoBehaviour
                 if (hit.distance <= Distance
                     && lamp)
                 {
+                    TimedSwitch lampSwitch = lamp.GetComponent<TimedSwitch>();
                     if (lamp.Use())
                     {
                         Vector2 distanceToHit = hit.collider.transform.position - _self.position;
-                        lamp.GetComponent<Animator>().Play("RopeAttached");
 
                         if (_teleporting)
                         {
@@ -73,6 +73,10 @@ public class Rope : MonoBehaviour
                         else
                         {
                             _movement.AddForce(Force * distanceToMouse.normalized);
+                        }
+                        if (lampSwitch)
+                        {
+                            lampSwitch.Activate();
                         }
                         break;
                     }

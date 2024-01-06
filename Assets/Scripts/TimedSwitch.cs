@@ -1,11 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(LightCooldown))]
 public class TimedSwitch : MonoBehaviour
 {
+    [SerializeField] Sprite _activatedSprite, _unactivatedSprite;
     [SerializeField] GameObject[] _linkedObjects;
     [SerializeField] float _activatedTime;
+    private SpriteRenderer _renderer;
     private bool _notActive;
+
+    private void Start()
+    {
+        _notActive = true;
+        _renderer = GetComponent<SpriteRenderer>();
+    }
 
     public void Activate()
     {
@@ -15,6 +24,8 @@ public class TimedSwitch : MonoBehaviour
             {
                 gameObject.SetActive(true);
             }
+            _renderer.sprite = _activatedSprite;
+            _notActive = false;
             StartCoroutine(nameof(Disactivate));
         }
     }
@@ -27,5 +38,7 @@ public class TimedSwitch : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        _renderer.sprite = _unactivatedSprite;
+        _notActive = true;
     }
 }
