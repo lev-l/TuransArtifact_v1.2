@@ -6,7 +6,9 @@ public class TimedSwitch : MonoBehaviour
 {
     [SerializeField] Sprite _activatedSprite, _unactivatedSprite;
     [SerializeField] GameObject[] _linkedObjects;
+    [SerializeField] GameObject[] _linkedObjectsToDisactivate;
     [SerializeField] float _activatedTime;
+    [SerializeField] bool _timed;
     private SpriteRenderer _renderer;
     private bool _notActive;
 
@@ -24,9 +26,18 @@ public class TimedSwitch : MonoBehaviour
             {
                 gameObject.SetActive(true);
             }
+            foreach (GameObject disObject in _linkedObjectsToDisactivate)
+            {
+                disObject.SetActive(false);
+            }
+
             _renderer.sprite = _activatedSprite;
             _notActive = false;
-            StartCoroutine(nameof(Disactivate));
+
+            if (_timed)
+            {
+                StartCoroutine(nameof(Disactivate));
+            }
         }
     }
 
@@ -38,6 +49,11 @@ public class TimedSwitch : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        foreach (GameObject disObject in _linkedObjectsToDisactivate)
+        {
+            disObject.SetActive(true);
+        }
+
         _renderer.sprite = _unactivatedSprite;
         _notActive = true;
     }

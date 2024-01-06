@@ -112,7 +112,9 @@ MonoBehaviour:
   _activatedSprite: {fileID: 21300000, guid: cf2f29301cb0a494a9f623f90c60c4f2, type: 3}
   _unactivatedSprite: {fileID: 21300000, guid: 14b6da1c629367849a1e5bd7eacdd24e, type: 3}
   _linkedObjects: []
+  _linkedObjectsToDisactivate: []
   _activatedTime: 1
+  _timed: 1
 --- !u!61 &2105117561
 BoxCollider2D:
   m_ObjectHideFlags: 0
