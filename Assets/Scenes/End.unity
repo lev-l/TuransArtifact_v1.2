@@ -681,7 +681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\tAuthors:\n\n\tProgramming:\n\t\tLeo Balashov\n\n\tGamedesign:\n\t\tLeo
+  m_text: "CONGRATS!\n\n\tAuthors:\n\n\tProgramming:\n\t\tLeo Balashov\n\n\tGamedesign:\n\t\tLeo
     Balashov\n\n\tArt:\n\t\tSzadi Art (from UnityAssetStore)\n\n\tBackground music
     by playonloop.com & \t\t\t\taudionautix.com\n"
   m_isRightToLeft: 0
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -20.89032, z: 0, w: -63.593643}
+  m_margin: {x: 0, y: -20.89032, z: 0, w: -83.89162}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
