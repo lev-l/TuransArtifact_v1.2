@@ -515,12 +515,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A lonely tower on the mountain Ametul... Once upon a time it was kept
-    by a mighty wizard. His name was Turan. He researched magic and found some very
-    interesting things... But the wizard died, and the tower had no master for years.
-    And there are still a lot of artifacts - products of Turan's experiments - in
-    the tower. Lots of people tried to get them, but due to wizard's traps... they
-    all died. But maybe you will get the artifacts? \t\t(press enter)"
+  m_text: "A dungeon in the mountain Ametul... Once upon a time it was kept by a
+    mighty wizard. His name was Turan. He researched magic and found some very interesting
+    things... But the wizard died, and the dungeon had no master for years. And there
+    are still lots of artifacts - products of Turan's experiments - in the dungeon.
+    Lots of people tried to get them, but due to wizard's traps... they all died.
+    But maybe you will get the artifacts? \t\t(press enter)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

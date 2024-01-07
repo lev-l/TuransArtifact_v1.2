@@ -13,8 +13,8 @@ public class Rope : MonoBehaviour
     private Transform _self;
     private Camera _camera;
     private bool _teleporting;
-    private RaycastHit2D[] _hitsBuffer = new RaycastHit2D[5];
-    private List<RaycastHit2D> _hitsList = new List<RaycastHit2D>(5);
+    private RaycastHit2D[] _hitsBuffer = new RaycastHit2D[15];
+    private List<RaycastHit2D> _hitsList = new List<RaycastHit2D>(20);
 
     void Start()
     {
@@ -61,10 +61,10 @@ public class Rope : MonoBehaviour
                 if (hit.distance <= Distance
                     && lamp)
                 {
+                    TimedSwitch lampSwitch = lamp.GetComponent<TimedSwitch>();
                     if (lamp.Use())
                     {
                         Vector2 distanceToHit = hit.collider.transform.position - _self.position;
-                        lamp.GetComponent<Animator>().Play("RopeAttached");
 
                         if (_teleporting)
                         {
@@ -73,6 +73,10 @@ public class Rope : MonoBehaviour
                         else
                         {
                             _movement.AddForce(Force * distanceToMouse.normalized);
+                        }
+                        if (lampSwitch)
+                        {
+                            lampSwitch.Activate();
                         }
                         break;
                     }
