@@ -38,7 +38,6 @@ public class METRICS : MonoBehaviour
                 _appoaxis?.Invoke();
             }
         }
-        Debug.Log((_yPosition - _transform.position.y) / (Time.time - _timeAppoaxis));
     }
 
     public void Ungrounded()

@@ -13,8 +13,8 @@ public class Rope : MonoBehaviour
     private Transform _self;
     private Camera _camera;
     private bool _teleporting;
-    private RaycastHit2D[] _hitsBuffer = new RaycastHit2D[5];
-    private List<RaycastHit2D> _hitsList = new List<RaycastHit2D>(5);
+    private RaycastHit2D[] _hitsBuffer = new RaycastHit2D[15];
+    private List<RaycastHit2D> _hitsList = new List<RaycastHit2D>(20);
 
     void Start()
     {
@@ -56,22 +56,30 @@ public class Rope : MonoBehaviour
             for(int i = _hitsList.Count - 1; i >= 0; i--)
             {
                 RaycastHit2D hit = _hitsList[i];
+                LightCooldown lamp = hit.collider.GetComponent<LightCooldown>();
 
                 if (hit.distance <= Distance
-                    && hit.collider.CompareTag("Light"))
+                    && lamp)
                 {
-                    Vector2 distanceToHit = hit.collider.transform.position - _self.position;
-                    hit.collider.GetComponent<Animator>().Play("RopeAttached");
+                    TimedSwitch lampSwitch = lamp.GetComponent<TimedSwitch>();
+                    if (lamp.Use())
+                    {
+                        Vector2 distanceToHit = hit.collider.transform.position - _self.position;
 
-                    if (_teleporting)
-                    {
-                        _movement.transform.Translate(distanceToHit);
+                        if (_teleporting)
+                        {
+                            _movement.transform.Translate(distanceToHit);
+                        }
+                        else
+                        {
+                            _movement.AddForce(Force * distanceToMouse.normalized);
+                        }
+                        if (lampSwitch)
+                        {
+                            lampSwitch.Activate();
+                        }
+                        break;
                     }
-                    else
-                    {
-                        _movement.AddForce(Force * distanceToHit.normalized);
-                    }
-                    break;
                 }
             }
         }
