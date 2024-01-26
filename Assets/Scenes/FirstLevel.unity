@@ -45943,6 +45943,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 573780150558654502, guid: b163aa8fff8c8e649bfb2a9d43e460af,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 573780150558654502, guid: b163aa8fff8c8e649bfb2a9d43e460af,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.050980397
+      objectReference: {fileID: 0}
+    - target: {fileID: 573780150558654502, guid: b163aa8fff8c8e649bfb2a9d43e460af,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.050980397
+      objectReference: {fileID: 0}
+    - target: {fileID: 573780150558654502, guid: b163aa8fff8c8e649bfb2a9d43e460af,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.0627451
+      objectReference: {fileID: 0}
     - target: {fileID: 573780150948057536, guid: b163aa8fff8c8e649bfb2a9d43e460af,
         type: 3}
       propertyPath: m_CollisionDetection

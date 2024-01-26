@@ -28,11 +28,11 @@ public class Rope : MonoBehaviour
 
     void Update()
     {
-        if (PlayerAbilities.PhysicsTeleportation && Input.GetKeyDown(KeyCode.Q))
+        if (PlayerAbilities.PhysicsTeleportation && Input.GetKeyDown(KeyCode.W))
         {
             _teleporting = true;
         }
-        if (PlayerAbilities.PhysicsTeleportation && Input.GetKeyUp(KeyCode.Q))
+        if (PlayerAbilities.PhysicsTeleportation && Input.GetKeyUp(KeyCode.W))
         {
             _teleporting = false;
         }
