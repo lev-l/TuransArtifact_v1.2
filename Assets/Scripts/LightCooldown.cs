@@ -35,4 +35,9 @@ public class LightCooldown : MonoBehaviour
         yield return new WaitForSeconds(_cooldown);
         ready = true;
     }
+
+    private void OnDisable()
+    {
+        ready = true;
+    }
 }
